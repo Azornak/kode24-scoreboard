@@ -17,15 +17,9 @@ class App extends React.Component{
       userRankings: [],
       teamMembers: []
     }
-
-    this.fetchRankings = this.fetchRankings.bind(this);
   }
 
   componentDidMount(){
-    this.fetchRankings();
-  }
-
-  fetchRankings(){
     fetch('https://azor-proxy.herokuapp.com/https://kodeskole-beta.kode24.no/api/highscore').then(res => {
       res.json().then(json => {
         const teamMembers = json.userScores.filter(x => members.includes(x.id)).sort((a,b) => a.points < b.points ? 1 : -1);
@@ -38,19 +32,20 @@ class App extends React.Component{
     })
   }
 
+
   aventoInTheLead(){
     let rankOne = this.state.teamRankings.filter(x => x.rank === 1);
     if(this.state.teamRankings.length === 0)
-      return <h3>Kode24 kodeskole - Henter data...</h3>
+      return "Henter data...";
 
     if(rankOne.length === 1 && rankOne[0].name === 'AVENTO'){
-      return <h3>Kode24 kodeskole - Vi leder! 🎉🎉🎉</h3>
+      return "Vi leder! 🎉🎉🎉";
     }
     else if(rankOne.length > 1 && rankOne.filter(x => x.name === 'AVENTO').length > 0){
-      return <h3>Kode24 kodeskole - Uavgjort 😐</h3>
+      return "Uavgjort 😐";
     }
 
-    return <h3>Kode24 kodeskole - Vi leder ikke lengre 😢</h3>
+    return "Vi leder ikke lengre 😢";
   }
 
   render(){
@@ -58,7 +53,7 @@ class App extends React.Component{
     const teamMembers = this.state.teamMembers.filter(x => x.points > 0);
     return(
     <div className="main">
-      <div className="header">{this.aventoInTheLead()}</div>
+      <div className="header"><h3>{"Kode24 kodeskole - " + this.aventoInTheLead()}</h3></div>
 
       <TableContainer className="tablecontainer" component={Paper}>
         <Table className="ranking-table" aria-label="customized table">
