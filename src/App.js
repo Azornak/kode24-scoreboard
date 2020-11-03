@@ -53,7 +53,7 @@ class App extends React.Component{
     return(
     <div className="main">
       {this.aventoInTheLead()}
-      <TableContainer style={{width: '40vw'}}className="tablecontainer" component={Paper}>
+      <TableContainer className="tablecontainer" component={Paper}>
         <Table className="ranking-table" aria-label="customized table">
           <TableHead>
             <TableRow className="header">

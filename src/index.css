@@ -13,9 +13,11 @@ code {
 }
 
 
-.table-container {
-  width: 80vw !important;
-}
+  .main .MuiTableContainer-root {
+    max-width: 800px;
+  }
+
+
 
 .main {
   display: flex;
