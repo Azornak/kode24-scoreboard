@@ -1,4 +1,5 @@
 import React from 'react';
+import './App.css';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
@@ -6,13 +7,15 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
+import members from './data/team.json';
 
 class App extends React.Component{
   constructor(props){
     super(props);
     this.state = {
       teamRankings: [],
-      userRankings: []
+      userRankings: [],
+      teamMembers: []
     }
 
     this.fetchRankings = this.fetchRankings.bind(this);
@@ -23,11 +26,13 @@ class App extends React.Component{
   }
 
   fetchRankings(){
-    fetch('https://cors-anywhere.herokuapp.com/https://kodeskole-beta.kode24.no/api/highscore').then(res => {
+    fetch('https://azor-proxy.herokuapp.com/https://kodeskole-beta.kode24.no/api/highscore').then(res => {
       res.json().then(json => {
+        const teamMembers = json.userScores.filter(x => members.includes(x.id)).sort((a,b) => a.points < b.points ? 1 : -1);
         this.setState({
           teamRankings: json.teamScores,
-          userRankings: json.userScores
+          userRankings: json.userScores,
+          teamMembers
         });
       })
     })
@@ -50,9 +55,11 @@ class App extends React.Component{
 
   render(){
     const teamRankings = this.state.teamRankings.slice(0,10);
+    const teamMembers = this.state.teamMembers.filter(x => x.points > 0);
     return(
     <div className="main">
-      {this.aventoInTheLead()}
+      <div className="header">{this.aventoInTheLead()}</div>
+
       <TableContainer className="tablecontainer" component={Paper}>
         <Table className="ranking-table" aria-label="customized table">
           <TableHead>
@@ -75,7 +82,27 @@ class App extends React.Component{
           </TableBody>
         </Table>
       </TableContainer>
-    </div>);
+      <TableContainer className="tablecontainer" component={Paper}>
+        <Table className="ranking-table" aria-label="customized table">
+          <TableHead>
+            <TableRow className="header">
+              <TableCell>Rank</TableCell>
+              <TableCell>Name</TableCell>
+              <TableCell>Score</TableCell>
+            </TableRow>
+          </TableHead>
+          <TableBody>
+            {teamMembers.map((row) => (
+              <TableRow className="tablerow" key={row.name}>
+                <TableCell>{row.rank}</TableCell>
+                <TableCell>{row.name}</TableCell>
+                <TableCell>{row.points}</TableCell>
+              </TableRow>
+            ))}
+          </TableBody>
+        </Table>
+      </TableContainer>
+      </div>);
   }
 }
 
