@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/kode24-scoreboard/static/css/main.98b19bc2.chunk.css",
-    "main.js": "/kode24-scoreboard/static/js/main.a3e71ad1.chunk.js",
-    "main.js.map": "/kode24-scoreboard/static/js/main.a3e71ad1.chunk.js.map",
+    "main.css": "/kode24-scoreboard/static/css/main.e5ceb9c7.chunk.css",
+    "main.js": "/kode24-scoreboard/static/js/main.6e90c6a7.chunk.js",
+    "main.js.map": "/kode24-scoreboard/static/js/main.6e90c6a7.chunk.js.map",
     "runtime-main.js": "/kode24-scoreboard/static/js/runtime-main.775a999a.js",
     "runtime-main.js.map": "/kode24-scoreboard/static/js/runtime-main.775a999a.js.map",
     "static/js/2.8377f111.chunk.js": "/kode24-scoreboard/static/js/2.8377f111.chunk.js",
@@ -10,13 +10,13 @@
     "static/js/3.0dd79c2a.chunk.js": "/kode24-scoreboard/static/js/3.0dd79c2a.chunk.js",
     "static/js/3.0dd79c2a.chunk.js.map": "/kode24-scoreboard/static/js/3.0dd79c2a.chunk.js.map",
     "index.html": "/kode24-scoreboard/index.html",
-    "static/css/main.98b19bc2.chunk.css.map": "/kode24-scoreboard/static/css/main.98b19bc2.chunk.css.map",
+    "static/css/main.e5ceb9c7.chunk.css.map": "/kode24-scoreboard/static/css/main.e5ceb9c7.chunk.css.map",
     "static/js/2.8377f111.chunk.js.LICENSE.txt": "/kode24-scoreboard/static/js/2.8377f111.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.775a999a.js",
     "static/js/2.8377f111.chunk.js",
-    "static/css/main.98b19bc2.chunk.css",
-    "static/js/main.a3e71ad1.chunk.js"
+    "static/css/main.e5ceb9c7.chunk.css",
+    "static/js/main.6e90c6a7.chunk.js"
   ]
 }
