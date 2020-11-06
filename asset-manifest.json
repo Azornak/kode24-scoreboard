@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/kode24-scoreboard/static/css/main.1ca0c428.chunk.css",
-    "main.js": "/kode24-scoreboard/static/js/main.ecb715e8.chunk.js",
-    "main.js.map": "/kode24-scoreboard/static/js/main.ecb715e8.chunk.js.map",
+    "main.js": "/kode24-scoreboard/static/js/main.cc5508f9.chunk.js",
+    "main.js.map": "/kode24-scoreboard/static/js/main.cc5508f9.chunk.js.map",
     "runtime-main.js": "/kode24-scoreboard/static/js/runtime-main.b9001d68.js",
     "runtime-main.js.map": "/kode24-scoreboard/static/js/runtime-main.b9001d68.js.map",
     "static/js/2.584b3002.chunk.js": "/kode24-scoreboard/static/js/2.584b3002.chunk.js",
@@ -17,6 +17,6 @@
     "static/js/runtime-main.b9001d68.js",
     "static/js/2.584b3002.chunk.js",
     "static/css/main.1ca0c428.chunk.css",
-    "static/js/main.ecb715e8.chunk.js"
+    "static/js/main.cc5508f9.chunk.js"
   ]
 }
